@@ -1,13 +1,48 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Karla', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar {
+    @apply fixed w-full flex flex-wrap items-center justify-between px-2 py-3 bg-pk-third shadow-md mb-3;
+}
+
+.navbar-container {
+    @apply container px-4 mx-auto flex flex-wrap items-center justify-between text-pk-dark;
+}
+
+.navbar-btn {
+    @apply cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent;
+}
+
+.item-link {
+    @apply px-3 py-2 flex items-center uppercase font-bold leading-snug;
+}
+
+.bg-gradient {
+    background: linear-gradient(180deg, #F5DB13 0%, #F2B807 100%);
+}
+
+.badges {
+    @apply text-lg font-semibold inline-block py-1 px-4 uppercase rounded-full text-white bg-pk-second uppercase;
+}
+
+.btn {
+    @apply text-center font-bold uppercase text-sm py-3 rounded-lg shadow
+}
+
+.btn-green {
+    @apply bg-pk-green text-white;
+}
+
+.card {
+    @apply flex flex-col min-w-0 break-words bg-white rounded-lg shadow-lg h-full;
+}
+
+.card-container {
+    @apply container px-4 mx-auto flex flex-wrap;
 }
