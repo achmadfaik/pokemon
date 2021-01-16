@@ -81,7 +81,7 @@ const Detail = (props) => {
                 </div>
                 <div className="flex space-x-4">
                     <button onClick={() => props.history.goBack()} className="px-3 w-full bg-pk-dark text-white btn lg:inline-block block lg:m-0 m-auto outline-none focus:outline-none" type="button" style={{ transition: "all .15s ease" }}>Back</button>
-                    <button onClick={catchPokemon} className="px-3 w-full btn btn-green lg:inline-block block lg:m-0 m-auto outline-none focus:outline-none" type="button" style={{ transition: "all .15s ease" }}>
+                    <button onClick={catchPokemon} disabled={buttonLoading} className="px-3 w-full btn btn-green lg:inline-block block lg:m-0 m-auto outline-none focus:outline-none" type="button" style={{ transition: "all .15s ease" }}>
                         {(buttonLoading)? 'catching ...' : 'Catch Pokemon'}
                     </button>
                 </div>
@@ -128,7 +128,7 @@ const Detail = (props) => {
                                         className="text-white bg-pk-danger rounded-lg font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1" type="button" style={{ transition: "all .15s ease" }}
                                         onClick={() => setShowModal(false)}>Close</button>
                                     { (catchStatus) ?
-                                        <button disabled={nickname===''} className={`bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-2 rounded-lg shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ${nickname===''?'cursor-not-allowed':''}`} type="button" style={{ transition: "all .15s ease" }}
+                                        <button disabled={nickname===''||buttonLoading} className={`bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-2 rounded-lg shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ${nickname===''?'cursor-not-allowed':''}`} type="button" style={{ transition: "all .15s ease" }}
                                             onClick={() => savePokemon(data.pokemon)}>{(buttonLoading)? 'saving ...' : 'Save'}</button>
                                         : null}
                                 </div>

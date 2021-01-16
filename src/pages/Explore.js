@@ -64,7 +64,7 @@ const Explore = () => {
             {(data)
                 ?
                 <div className="w-full flex">
-                    <button type="button" onClick={loadMore} className="btn btn-green px-16 lg:inline-block block m-auto outline-none focus:outline-none" style={{ transition: "all .15s ease" }}>
+                    <button type="button" onClick={loadMore} disabled={buttonLoading} className="btn btn-green px-16 lg:inline-block block m-auto outline-none focus:outline-none" style={{ transition: "all .15s ease" }}>
                         {(buttonLoading)? 'Loading ...' : 'Load more'}
                     </button>
                 </div>
